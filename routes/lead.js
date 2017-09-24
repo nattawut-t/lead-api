@@ -1,4 +1,3 @@
-const Joi = require('Joi')
 const {
   search,
   get,
@@ -11,6 +10,8 @@ const {
   getParams,
 } = require('../schemas/lead')
 
+const tags = ['api', 'lead']
+
 module.exports = [
   {
     method: 'GET',
@@ -18,7 +19,7 @@ module.exports = [
     config: {
       handler: search,
       description: 'Search Leads',
-      tags: ['api'],
+      tags,
       validate: {
         query: searchQuery,
       },
@@ -30,7 +31,7 @@ module.exports = [
     config: {
       handler: get,
       description: 'Get Lead',
-      tags: ['api'],
+      tags,
       validate: {
         params: getParams,
       },
@@ -43,7 +44,7 @@ module.exports = [
     config: {
       handler: create,
       description: 'Create Lead',
-      tags: ['api'],
+      tags,
       validate: {
         payload: createPayload,
       },
@@ -56,7 +57,7 @@ module.exports = [
     config: {
       handler: update,
       description: 'Update Lead',
-      tags: ['api'],
+      tags,
       validate: {
         payload: createPayload,
       },

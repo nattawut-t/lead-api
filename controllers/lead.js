@@ -1,5 +1,5 @@
-const JWT = require('jsonwebtoken')
-const Boom = require('boom')
+// const JWT = require('jsonwebtoken')
+// const Boom = require('boom')
 
 const create = (request, reply) => {
   return reply({})
